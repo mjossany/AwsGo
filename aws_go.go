@@ -18,7 +18,7 @@ func NewAwsGoStack(scope constructs.Construct, id string, props *AwsGoStackProps
 	}
 	stack := awscdk.NewStack(scope, &id, &sprops)
 
-	awslambda.NewFunction(stack, jsii.String("MyLambdaFunction"), &awslambda.FunctionProps{
+	awslambda.NewFunction(stack, jsii.String("myLambdaFunction"), &awslambda.FunctionProps{
 		Runtime: awslambda.Runtime_PROVIDED_AL2023(),
 		Code:    awslambda.Code_FromAsset(jsii.String("lambda/function.zip"), nil),
 		Handler: jsii.String("main"),
