@@ -17,6 +17,7 @@ func NewAwsGoStack(scope constructs.Construct, id string, props *AwsGoStackProps
 	if props != nil {
 		sprops = props.StackProps
 	}
+
 	stack := awscdk.NewStack(scope, &id, &sprops)
 
 	table := awsdynamodb.NewTable(stack, jsii.String("myUserTable"), &awsdynamodb.TableProps{
