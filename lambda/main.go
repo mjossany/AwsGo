@@ -19,7 +19,6 @@ func HandleRequest(event MyEvent) (string, error) {
 	}
 
 	return fmt.Sprintf("Hello, %s!", event.Username), nil
-
 }
 
 func main() {
@@ -28,6 +27,8 @@ func main() {
 		switch request.Path {
 		case "/register":
 			return myApp.ApiHandler.RegisterUserHandler(request)
+		case "/login":
+			return myApp.ApiHandler.LoginUser(request)
 		default:
 			return events.APIGatewayProxyResponse{
 				Body:       "Not found",
